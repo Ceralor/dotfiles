@@ -4,4 +4,4 @@ This is a repository for my configuration files I use on Linux-based systems, AK
 
 ### How do I install these without just copying down?
 
-Install using `curl -Lks https://coding.coyotesin.space/kaysnipraw/setup_dotfiles | bash`
+Install using `curl https://raw.githubusercontent.com/Ceralor/dotfiles/master/.local/bin/setup_dotfiles.sh | bash`
