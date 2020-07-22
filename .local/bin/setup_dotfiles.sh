@@ -12,3 +12,12 @@ if [ $? = 0 ]; then
 fi;
 homegit checkout
 homegit config status.showUntrackedFiles no
+find ~/.local/bin/ -name "*.sh" -type f -exec chmod +x {} \;
+source ~/.bash_profile
+echo "Setup additional bash config? "
+select yn in "Yes" "No"; do
+	case $yn in
+  	Yes ) ~/.local/bin/setup_bashconfigs.sh; break;;
+  	No ) exit;;
+  esac
+done
