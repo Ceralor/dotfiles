@@ -86,3 +86,5 @@ fi
 #function getcode() { ykman oath code $1 | awk '{ print $2 }' | xclip -sel clip; }
 #eval $(thefuck --alias --enable-experimental-instant-mode)
 source ~/.shell_aliases
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
