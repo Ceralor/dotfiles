@@ -115,7 +115,25 @@ fi
 # Import shell aliases
 . ~/.shell_aliases
 # User specific environment
-PATH="$HOME/.local/bin:$HOME/bin:$HOME/.platformio/penv/bin:$PATH"
+PATH="$HOME/.local/bin:$PATH"
 export PATH
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+## BitWarden vault unlock (unlocks for full user session)
+bw_session_path=/run/user/$UID/BW_SESSION
+bw_bin_path=`which bw 2>/dev/null`
+if [ -n "$bw_bin_path" ]; then
+    if [ ! -f "$bw_session_path" ] || [ -z "`cat $bw_session_path`" ]; then
+        bw unlock --raw > $bw_session_path
+        if [ ! $? -eq 0 ]; then
+            rm -f $bw_session_path 2>/dev/null
+        else
+            chmod 400 $bw_session_path
+        fi
+    fi
+    if [ -f "$bw_session_path" ]; then
+        export BW_SESSION=`cat $bw_session_path`
+    fi
+fi
+unset bw_session_path bw_bin_path
