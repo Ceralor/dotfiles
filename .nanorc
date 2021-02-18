@@ -1,4 +1,4 @@
-include /home/ceralor/.local/share/nano/*.nanorc
+include ~/.local/share/nano/*.nanorc
 
 set titlecolor  brightblack,white
 set numbercolor brightblue
