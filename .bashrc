@@ -113,8 +113,10 @@ if ! shopt -oq posix; then
 fi
 
 
-PATH="$HOME/.local/bin:$PATH"
+PATH="$HOME/.pyenv/bin:$HOME/.local/bin:$PATH"
 export PATH
+eval "$(pyenv init --path)"
+eval "$(pyenv virtualenv-init -)"
 # Import shell aliases
 . ~/.shell_aliases
 
