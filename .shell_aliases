@@ -1,6 +1,6 @@
 alias homegit="git --work-tree=$HOME --git-dir=$HOME/.files.git"
-alias wine64="WINEPREFIX='~/.local/share/wineprefixes/wine64' WINEARCH=64 wine"
-alias wine="WINEPREFIX='~/.local/share/wineprefixes/wine32' WINEARCH=32 wine"
+alias wine64="WINEPREFIX='$HOME/.local/share/wineprefixes/wine64' WINEARCH=64 wine"
+alias wine="WINEPREFIX='$HOME/.local/share/wineprefixes/wine32' WINEARCH=32 wine"
 alias mail="mutt"
 alias flatpak="/usr/bin/flatpak --user"
 alias subl="code"
