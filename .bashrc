@@ -112,11 +112,14 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# Set up pyenv if available
+if [ ! -z `which pyenv` ]; then
+    PATH="$HOME/.pyenv/bin:$HOME/.local/bin:$PATH"
+    export PATH
+    eval "$(pyenv init --path)"
+    eval "$(pyenv virtualenv-init -)"
+fi
 
-PATH="$HOME/.pyenv/bin:$HOME/.local/bin:$PATH"
-export PATH
-eval "$(pyenv init --path)"
-eval "$(pyenv virtualenv-init -)"
 # Import shell aliases
 . ~/.shell_aliases
 
