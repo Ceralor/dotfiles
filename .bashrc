@@ -115,8 +115,11 @@ fi
 
 PATH="$HOME/.pyenv/bin:$HOME/.local/bin:$PATH"
 export PATH
-eval "$(pyenv init --path)"
-eval "$(pyenv virtualenv-init -)"
+if [ -f ~/.pyenv ]; then
+    eval "$(pyenv init --path)"
+    eval "$(pyenv virtualenv-init -)"
+fi
+
 # Import shell aliases
 . ~/.shell_aliases
 
