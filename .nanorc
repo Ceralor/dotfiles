@@ -7,7 +7,7 @@ set statuscolor brightblue
 set keycolor    brightblue
 
 set mouse
-set morespace
+#set morespace
 set multibuffer
 set noconvert
 # set nohelp            # perhaps comment out until comfortable
@@ -17,7 +17,7 @@ set regexp
 set softwrap
 set atblanks
 set showcursor
-set smooth
+#set smooth
 set suspend
 set tabsize 2
 set constantshow
