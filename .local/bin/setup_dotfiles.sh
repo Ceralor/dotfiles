@@ -16,8 +16,11 @@ find ~/.local/bin/ -name "*.sh" -type f -exec chmod +x {} \;
 source ~/.bash_profile
 echo "Setup additional bash config? "
 select yn in y n; do
-	case $yn in
-  	y ) ~/.local/bin/setup_bashconfigs.sh; break;;
-  	n ) exit;;
+  case $yn in
+    y)
+      ~/.local/bin/setup_bashconfigs.sh
+      break;;
+    n)
+      exit;;
   esac
 done
