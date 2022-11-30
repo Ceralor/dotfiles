@@ -1,13 +1,16 @@
 alias homegit="git --work-tree=$HOME --git-dir=$HOME/.files.git"
-export WINEPATH=`which wine`
-export WINETRICKSPATH=`which winetricks`
-alias wine64="WINEPREFIX='$HOME/.local/share/wineprefixes/wine64' WINEARCH=win64 $WINEPATH"
-alias winetricks64="WINEPREFIX='$HOME/.local/share/wineprefixes/wine64' WINEARCH=win64 $WINETRICKSPATH"
-alias wine="WINEPREFIX='$HOME/.local/share/wineprefixes/wine32' WINEARCH=win32 $WINEPATH"
-alias winetricks="WINEPREFIX='$HOME/.local/share/wineprefixes/wine32' WINEARCH=win32 $WINETRICKSPATH"
-alias mail="mutt"
+if command -v wine &>/dev/null; then
+	export WINEPATH=`which wine`
+	export WINETRICKSPATH=`which winetricks`
+	alias wine64="WINEPREFIX='$HOME/.local/share/wineprefixes/wine64' WINEARCH=win64 $WINEPATH"
+	alias winetricks64="WINEPREFIX='$HOME/.local/share/wineprefixes/wine64' WINEARCH=win64 $WINETRICKSPATH"
+	alias wine="WINEPREFIX='$HOME/.local/share/wineprefixes/wine32' WINEARCH=win32 $WINEPATH"
+	alias winetricks="WINEPREFIX='$HOME/.local/share/wineprefixes/wine32' WINEARCH=win32 $WINETRICKSPATH"
+fi
+if command -v mutt &>/dev/null; then
+	alias mail="mutt"
+fi
 alias flatpak="/usr/bin/flatpak --user"
-alias subl="code"
 dush () {
 	du -sh $1/* | sort -rh
 }
