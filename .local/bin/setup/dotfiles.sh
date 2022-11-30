@@ -1,3 +1,4 @@
+mdkir -p ~/.local/bin ~/.local/lib ~/.local/share
 git clone --bare git@github.com:Ceralor/dotfiles.git $HOME/.files.git
 homegit() { 
   git --git-dir=$HOME/.files.git --work-tree=$HOME $@ 
@@ -12,13 +13,13 @@ if [ $? = 0 ]; then
 fi;
 homegit checkout
 homegit config status.showUntrackedFiles no
-find ~/.local/bin/ -name "*.sh" -type f -exec chmod +x {} \;
+#find ~/.local/bin/setup -name "*.sh" -type f -exec chmod +x {} \;
 source ~/.bash_profile
 echo "Setup additional bash config? "
 select yn in y n; do
   case $yn in
     y)
-      ~/.local/bin/setup_bashconfigs.sh
+      bash ~/.local/bin/setup/bashconfigs.sh
       break;;
     n)
       exit;;
